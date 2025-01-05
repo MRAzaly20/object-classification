@@ -14,7 +14,7 @@ tf.config.run_functions_eagerly(True)
 #from google.colab import drive
 #drive.mount('/content/drive')
 
-train_path = os.path.abspath("datasets/archive/test/training/")  # Absolute Path
+train_path = os.path.abspath("datasets/test/training/")  # Absolute Path
 print("Absolute train path:", train_path)
 
 def get_model(IMG_SIZE):
@@ -111,7 +111,7 @@ cf_matrix = confusion_matrix(y_valid, y_pred)
 print("Confusion Matrix:\n", cf_matrix)
 print(f"Accuracy Score: {accuracy_score(y_valid,y_pred)}")
 
-model.save(f'/content/drive/MyDrive/deteksi-gambar/model/model{j}.h5')
+model.save(f'models/model{j}.h5')
 print(f'Score for fold {j}: {model.metrics_names[0]} of {scores[0]}; {model.metrics_names[1]} of {scores[1] * 100}%')
 acc_per_fold.append(scores[1] * 100)
 loss_per_fold.append(scores[0])
