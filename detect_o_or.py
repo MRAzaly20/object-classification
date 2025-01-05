@@ -111,7 +111,7 @@ cf_matrix = confusion_matrix(y_valid, y_pred)
 print("Confusion Matrix:\n", cf_matrix)
 print(f"Accuracy Score: {accuracy_score(y_valid,y_pred)}")
 
-model.save(f'models/model{j}.h5')
+model.save(f'models/model_v2/model{j}.h5')
 print(f'Score for fold {j}: {model.metrics_names[0]} of {scores[0]}; {model.metrics_names[1]} of {scores[1] * 100}%')
 acc_per_fold.append(scores[1] * 100)
 loss_per_fold.append(scores[0])
